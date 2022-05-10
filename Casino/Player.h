@@ -3,24 +3,15 @@
 class Player
 {
 private:
-	double _balanse = 100;
+	float m_Balanse;
 public:
+	Player() = default;
+	Player(float balanse) : m_Balanse(balanse){}
+	float Get_balanse() const;
 
-	double get_balanse()
-	{
-		return _balanse;
-	}
-	void set_balanse(double balanse)
-	{
-		_balanse = balanse;
-	}
+	void Set_balanse(float balanse);
 
-	void plus_money()
-	{
-		_balanse++;
-	}
-	void minus_money()
-	{
-		_balanse--;
-	}
+	void Plus_money();
+
+	void Minus_money();
 };

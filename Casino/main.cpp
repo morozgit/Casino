@@ -1,45 +1,31 @@
-#include<iostream>
-#include <conio.h>
+//#include"Casino.h"
 #include"Player.h"
-#include"One_arm_bandit.h"
+#include"Slot_machine.h"
 
 int main()
 {
-	Player human;
-	One_arm_bandit bandit;
+	std::cout << "What sort of play do you want to play?" << std::endl;
+	std::cout << "Roulette - press 1" << std::endl << "Slot machine - press 2" << std::endl;
+	int number_of_game;
+	std::cin >> number_of_game;
+	std::cout << "How much money in your pocket?" << std::endl;
+	float balanse;
+	std::cin >> balanse;
+	Player human(balanse);//constructor 
+	if (number_of_game == 1)
+	{
+		
+	}
+	Slot_machine bandit;
+	
+	
 	std::cout << "Let`s start the game" << std::endl;
 	std::cout << "Press . for continued game" << std::endl;
 	std::cout << "Press another button for quit" << std::endl;
-	std::cout << "Your bank equs 100" << std::endl;
-	while (human.get_balanse() != 0)
+	std::cout << "Your bank equs " << balanse << std::endl;
+	while (human.Get_balanse() != 0)
 	{
-		if (_kbhit()) // слушатель нажатия на клаву
-		{
-			if (_getch() == 46) // ждёт нажатия . на клаву без Enter после этого
-			{
-				bandit.create_number();
-				bandit.print_res();
-				if (bandit.check_resalt())
-				{
-					if (bandit.check_resalt() && bandit.flag)
-					{
-						std::cout << "JackPot!!! You are lucky" << std::endl;
-						human.set_balanse(human.get_balanse()+1000);
-					}
-					human.plus_money();
-				}
-				else
-				{
-					human.minus_money();
-				}
-			}
-			else
-			{
-				std::cout << "Game over" << " " << "You win" << " " << human.get_balanse() << std::endl;
-				break;
-			}
-			std::cout << "Your bank is " << human.get_balanse() << std::endl;
-		}
+		bandit.Logic_game();
 	}
 
 	return 0;
