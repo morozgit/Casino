@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include <conio.h>
+#include<memory>
 #include"Player.h"
 
 class Casino

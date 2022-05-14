@@ -1,5 +1,2 @@
-﻿  Slot_machine.cpp
-  main.cpp
-  Generating Code...
-C:\Users\moroz\Documents\C++\Vs\Casino\Casino\Slot_machine.cpp(45): warning C4717: 'operator<<': recursive on all control paths, function will cause runtime stack overflow
+﻿  main.cpp
   Casino.vcxproj -> C:\Users\moroz\Documents\C++\Vs\Casino\x64\Debug\Casino.exe

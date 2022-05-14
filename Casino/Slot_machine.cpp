@@ -1,5 +1,21 @@
 #include"Slot_machine.h"
 
+Slot_machine::Slot_machine() 
+{
+	number1 = 0;
+	number2 = 0;
+	number3 = 0;
+	human = nullptr;
+}
+
+Slot_machine::Slot_machine(float balanse)
+{
+	number1 = 0;
+	number2 = 0;
+	number3 = 0;
+	human = std::make_unique<Player>(balanse);
+}
+
 void Slot_machine::create_number()
 {
 	number1 = std::_Random_device() % 10;
@@ -46,11 +62,8 @@ void Slot_machine::create_number()
 
  void Slot_machine::Logic_game()
  {
+	 std::cout << "Slot_machine::Logic_game()" << std::endl;
 	 
-		 if (_kbhit()) // слушатель нажатия на клаву
-		 {
-			 if (_getch() == 46) // ждёт нажатия . на клаву без Enter после этого
-			 {
 				 create_number();
 					print_res();
 				 if (Check_result())
@@ -59,20 +72,16 @@ void Slot_machine::create_number()
 					 {
 						 std::cout << "JackPot!!! You are lucky" << std::endl;
 						 human->Set_balanse(human->Get_balanse() + 1000);
+						 std::cout << human->Get_balanse() << std::endl;
 					 }
 					 human->Plus_money();
+					 std::cout << human->Get_balanse() << std::endl;
 				 }
 				 else
 				 {
 					 human->Minus_money();
+					 std::cout << human->Get_balanse() << std::endl;
 				 }
-			 }
-			 else
-			 {
-				 std::cout << "Game over" << " " << "You win" << " " << human->Get_balanse() << std::endl;
-				 
-			 }
-			 std::cout << "Your bank is " << human->Get_balanse() << std::endl;
-		 }
+			
 	 
  }

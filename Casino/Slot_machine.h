@@ -6,13 +6,14 @@
 class Slot_machine : public Casino
 {
 private:
-	Player* human  = new Player();
+	std::unique_ptr<Player> human;
 	int number1, number2, number3;
 public:
-	~Slot_machine()
-	{
-		delete human;
-	}
+	Slot_machine();
+	Slot_machine(float balanse);
+
+	~Slot_machine(){}
+	
 	bool flag = false;
 	void create_number();
 		

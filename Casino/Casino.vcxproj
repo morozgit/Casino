@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Roulette.cpp" />
     <ClCompile Include="Slot_machine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Casino.h" />
+    <ClInclude Include="Roulette.h" />
     <ClInclude Include="Slot_machine.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
