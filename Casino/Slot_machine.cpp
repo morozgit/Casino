@@ -18,9 +18,10 @@ Slot_machine::Slot_machine(float balanse)
 
 void Slot_machine::create_number()
 {
-	number1 = std::_Random_device() % 10;
-	number2 = std::_Random_device() % 10;
-	number3 = std::_Random_device() % 10;
+	number1 = rand() % 10;
+	number2 = rand() % 10;
+	number3 = rand() % 10;
+	std::cout << number1 << " " << number2 << " " << number3 << std::endl;
 	/*number1 = 1;
 	number2 = 9;
 	number3 = 9;*/
@@ -47,41 +48,44 @@ void Slot_machine::create_number()
 		flag = false;
 	}
 }
-
+ 
  void Slot_machine::print_res()
  {
-	 std::cout << number1 << " " << number2 << " " << number3 << std::endl;
+	 Casino::print_res();
+	 std::cout << human->Get_balanse() << std::endl;
 	 
  }
+ 
 
- std::ostream& operator<<(std::ostream& os, const std::random_device& num)
+ /*std::ostream& operator<<(std::ostream& os, const std::random_device& num)
  {
 	 os << num;
 	 return os;
- }
+ }*/
+
+ 
 
  void Slot_machine::Logic_game()
  {
-	 std::cout << "Slot_machine::Logic_game()" << std::endl;
+	 //std::cout << "Slot_machine::Logic_game()" << std::endl;
 	 
-				 create_number();
-					print_res();
-				 if (Check_result())
-				 {
-					 if (Check_result() && flag)
-					 {
-						 std::cout << "JackPot!!! You are lucky" << std::endl;
-						 human->Set_balanse(human->Get_balanse() + 1000);
-						 std::cout << human->Get_balanse() << std::endl;
-					 }
-					 human->Plus_money();
-					 std::cout << human->Get_balanse() << std::endl;
-				 }
-				 else
-				 {
-					 human->Minus_money();
-					 std::cout << human->Get_balanse() << std::endl;
-				 }
-			
-	 
+	create_number();
+	
+	if (Check_result())
+	{
+		if (Check_result() && flag)
+		{
+			std::cout << "JackPot!!! You are lucky" << std::endl;
+			human->Set_balanse(human->Get_balanse() + 1000);
+			std::cout << human->Get_balanse() << std::endl;
+		}
+		human->Plus_money();
+		print_res();
+	}
+	else
+	{
+		human->Minus_money();
+		print_res();
+	} 
  }
+ 

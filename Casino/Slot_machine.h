@@ -1,6 +1,6 @@
 #pragma once
-#include<random>
 #include"Casino.h"
+
 
 
 class Slot_machine : public Casino
@@ -15,15 +15,15 @@ public:
 	~Slot_machine(){}
 	
 	bool flag = false;
-	void create_number();
+	void create_number() override;
 		
 	virtual bool Check_result()   override;
 	
-	virtual void Logic_game();
+	virtual void Logic_game() override;
 
-	friend std::ostream& operator<<(std::ostream& os, const std::random_device &num);// lambda
+	//friend std::ostream& operator<<(std::ostream& os, const std::random_device &num);// lambda
 
-	void print_res();
+	virtual void print_res() override;
 
 };
 
