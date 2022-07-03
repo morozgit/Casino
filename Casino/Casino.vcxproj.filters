@@ -27,7 +27,7 @@
     <ClCompile Include="Roulette.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Casino.cpp">
+    <ClCompile Include="ICasino.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="Slot_machine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Casino.h">
+    <ClInclude Include="ICasino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Roulette.h">

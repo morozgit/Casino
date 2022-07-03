@@ -8,6 +8,7 @@
 
 int main()
 {
+
 	std::string name;
 	std::cout << "What is your name?" << std::endl;
 	std::cin >> name;
@@ -27,43 +28,29 @@ int main()
 	// передать его по параметру
 	Player player(name, balanse);
 	
-	//void(*logic)() = Logic_game;
-	//auto logic = &Slot_machine::Logic_game;
 	
 	if (number_of_game == 1)
 	{
-		Roulette roulette(balanse);
+		Roulette roulette;
+
 		
-		while (true/*getch() == 46*/)
+		while (_getch() == 46)
 		{
-			roulette.Logic_game();
+			roulette.Logic_game(player);
 		}
-		auto print = [&roulette]() ->void // lambda for trening
-		{
-			roulette.print_res();
-		};
-		print();
+		
 	}
 
 
 	if (number_of_game == 2)
 	{
-		Slot_machine bandit(balanse);
+		Slot_machine bandit;
 		while (_getch() == 46)
 		{
-			bandit.Logic_game();
+			bandit.Logic_game(player);
 		}
-		auto print = [&bandit]() ->void // lambda for trening
-		{
-			bandit.print_res();
-		};
-		print();
 	}
-	
-	
-
-
-	
+		
 	return 0;
 }
 		

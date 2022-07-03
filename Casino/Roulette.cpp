@@ -1,15 +1,6 @@
 #include"Roulette.h"
 
-Roulette::Roulette()
-{
-	m_bet = {0, "green" };
-	//ptr_human = nullptr;
-}
-Roulette::Roulette(float balanse)
-{
-	m_bet = { 0, "green" };
-	//ptr_human = std::make_unique<Player>(balanse);
-}
+
 
 bool Roulette::Check_result()
 {
@@ -17,47 +8,29 @@ bool Roulette::Check_result()
 	return 0;
 }
 
-std::pair<int, std::string> Roulette::Create_cell()
+std::pair<const int, std::string> Roulette::Create_cell()
 {
-	m_bet.first = rand() % 36;
-	m_bet.second = generate_color(rand() % 2);
-	//std::cout << m_bet.first << " " << m_bet.second << std::endl;
-	return m_bet;
+	auto it = m_bet.find((rand() % 37));
+	return *it;
 }
 
 
 void Roulette::Logic_game(Player &player)
 {
-
-	std::cout << "Logic Raulette " << std::endl << Create_cell().first << " " << Create_cell().second << std::endl;
-}
-
- std::string Roulette::generate_color(int num)
- {
-	if(num == 0)
+	std::cout << "Make your bet" << std::endl;
+	int player_bet_num;
+	std::string player_bet_color;
+	std::cin >> player_bet_num >> player_bet_color;
+	if (player_bet_num == Create_cell().first && player_bet_color == Create_cell().second)
 	{
-		return "green";
-	}
-	else if(num % 2 == 0)
-	{
-		return "red";
+		player.Plus_money();
+		std::cout << "Congratulation! Your balanse is " << player.Get_balanse() << std::endl;
 	}
 	else
 	{
-		return "black";
+		std::cout << "Your balanse is " << player.Get_balanse() << std::endl;
 	}
- }
+	//std::cout << Create_cell().first << " " << Create_cell().second << std::endl;
+}
 
- void Roulette::print_res()
- {
-	 Casino::print_res();
-	 //std::cout << ptr_human->Get_balanse() << std::endl;
-	 
 
- }
-
- //std::ostream& operator<< (std::ostream& os, Color& num)
- //{
-	// //os << num;
-	// return os;
- //}
