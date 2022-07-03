@@ -8,7 +8,10 @@
 
 int main()
 {
-	std::cout << "What sort of play do you want to play?" << std::endl;
+	std::string name;
+	std::cout << "What is your name?" << std::endl;
+	std::cin >> name;
+	std::cout << "What sort of play do you want to play? " << name << std::endl;
 	std::cout << "Roulette - press 1" << std::endl << "Slot machine - press 2" << std::endl;
 	int number_of_game;
 	std::cin >> number_of_game;
@@ -19,6 +22,10 @@ int main()
 	std::cout << "Press . to continued game" << std::endl;
 	std::cout << "Press another button for quit" << std::endl;
 	std::cout << "Your bank equs " << balanse << std::endl;
+
+	// Player может быть создан тут 
+	// передать его по параметру
+	Player player(name, balanse);
 	
 	//void(*logic)() = Logic_game;
 	//auto logic = &Slot_machine::Logic_game;
@@ -27,7 +34,7 @@ int main()
 	{
 		Roulette roulette(balanse);
 		
-		while (_getch() == 46)
+		while (true/*getch() == 46*/)
 		{
 			roulette.Logic_game();
 		}
