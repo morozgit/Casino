@@ -20,8 +20,6 @@ int main()
 	float balanse;
 	std::cin >> balanse;
 	std::cout << "Let`s start the game" << std::endl;
-	std::cout << "Press . to continued game" << std::endl;
-	std::cout << "Press another button for quit" << std::endl;
 	std::cout << "Your bank equs " << balanse << std::endl;
 
 	// Player может быть создан тут 
@@ -32,11 +30,14 @@ int main()
 	if (number_of_game == 1)
 	{
 		Roulette roulette;
-
+		char non_stop = 'y';
 		
-		while (_getch() == 46)
+		while (roulette.Do_you_want_to_contine(non_stop))
 		{
 			roulette.Logic_game(player);
+			std::cout << "Do you want to contine? y or n" << std::endl;
+			std::cin >> non_stop;
+			roulette.Cin_exeption(non_stop);
 		}
 		
 	}
@@ -44,7 +45,10 @@ int main()
 
 	if (number_of_game == 2)
 	{
+		std::cout << "Press . to continued game" << std::endl;
+		std::cout << "Press another button for quit" << std::endl;
 		Slot_machine bandit;
+		
 		while (_getch() == 46)
 		{
 			bandit.Logic_game(player);

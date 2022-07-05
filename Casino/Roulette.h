@@ -23,6 +23,10 @@ public:
 	virtual bool Check_result() override;
 
 	std::pair<const int, std::string> Create_cell();
+
+	bool Do_you_want_to_contine(const char non_stop);
+	
+	void Cin_exeption( char str);
 	
 private:
 	// заполнение рулетки

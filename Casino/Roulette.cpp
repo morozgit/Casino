@@ -14,10 +14,39 @@ std::pair<const int, std::string> Roulette::Create_cell()
 	return *it;
 }
 
+bool Roulette::Do_you_want_to_contine(const char non_stop)
+{
+	
+	if (non_stop == 'y')
+	{
+		return true;
+	}
+	else if (non_stop == 'n')
+	{
+		return false;
+	}
+
+}
+
+void Roulette::Cin_exeption( char str)
+{
+
+	while (!(str == 'y' || str == 'n'))
+	{
+		std::cout <<  "Are you stupid?" << std::endl;
+		std::cin >> str;
+	}
+		
+}
+
 
 void Roulette::Logic_game(Player &player)
 {
-	std::cout << "Make your bet" << std::endl;
+	std::cout << "Choice your bet" << std::endl;
+	for (auto &cell : m_bet)
+	{
+		std::cout << '\t' << cell.first << ' ' << cell.second << std::endl;
+	}
 	int player_bet_num;
 	std::string player_bet_color;
 	std::cin >> player_bet_num >> player_bet_color;
