@@ -1,5 +1,5 @@
 ﻿  Roulette.cpp
   main.cpp
-  Создание кода...
-C:\Users\morozovav\Desktop\Learn\C++\Casino\Casino\Roulette.cpp(29): warning C4715: Roulette::Do_you_want_to_contine: значение возвращается не при всех путях выполнения
-  Casino.vcxproj -> C:\Users\morozovav\Desktop\Learn\C++\Casino\x64\Debug\Casino.exe
+  Generating Code...
+C:\Users\moroz\Documents\C++\Vs\Casino\Casino\Roulette.cpp(29): warning C4715: 'Roulette::Do_you_want_to_contine': not all control paths return a value
+  Casino.vcxproj -> C:\Users\moroz\Documents\C++\Vs\Casino\x64\Debug\Casino.exe

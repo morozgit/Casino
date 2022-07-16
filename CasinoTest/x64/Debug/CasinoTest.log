@@ -1,0 +1,4 @@
+﻿  test.cpp
+test.obj : error LNK2019: unresolved external symbol "public: float __cdecl Player::Get_balanse(void)const " (?Get_balanse@Player@@QEBAMXZ) referenced in function "private: virtual void __cdecl TestPlayer_TestPlayerSetBalanse_Test::TestBody(void)" (?TestBody@TestPlayer_TestPlayerSetBalanse_Test@@EEAAXXZ)
+test.obj : error LNK2019: unresolved external symbol "public: void __cdecl Player::Set_balanse(float)" (?Set_balanse@Player@@QEAAXM@Z) referenced in function "private: virtual void __cdecl TestPlayer_TestPlayerSetBalanse_Test::TestBody(void)" (?TestBody@TestPlayer_TestPlayerSetBalanse_Test@@EEAAXXZ)
+C:\Users\moroz\Documents\C++\Vs\Casino\x64\Debug\CasinoTest.exe : fatal error LNK1120: 2 unresolved externals

@@ -1,0 +1,1 @@
+C:\Users\moroz\Documents\C++\Vs\Casino\CasinoTest\x64\Debug\CasinoTest.vcxproj.CopyComplete

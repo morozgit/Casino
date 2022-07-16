@@ -1,4 +1,3 @@
-//#include"Casino.h"
 #include"Player.h"
 #include"Slot_machine.h"
 #include"Roulette.h"
@@ -6,9 +5,9 @@
 
 
 
+
 int main()
 {
-
 	std::string name;
 	std::cout << "What is your name?" << std::endl;
 	std::cin >> name;
