@@ -1,0 +1,5 @@
+﻿  Roulette.cpp
+  Slot_machine.cpp
+  Generating Code...
+C:\Users\Redmi Book Pro 14\Documents\C++\VS\Casino\Casino\Casino\Roulette.cpp(38): warning C4715: 'Roulette::Do_you_want_to_contine': not all control paths return a value
+  Casino.vcxproj -> C:\Users\Redmi Book Pro 14\Documents\C++\VS\Casino\Casino\x64\Debug\Casino.exe
